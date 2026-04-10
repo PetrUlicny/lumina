@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Fine Dining Experience</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <a href="#" class="logo">Lumina.</a>
+        <button class="mobile-menu-btn" id="menuBtn">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Domů</a></li>
+            <li><a href="#about">Náš příběh</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservation" class="btn">Rezervace</a></li>
+        </ul>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Kulinářská cesta</h1>
+            <p>Zažijte dokonalé spojení tradičních chutí a moderní gastronomie v atmosféře čisté elegance.</p>
+            <a href="#menu" class="btn">Objevte menu</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Šéfkuchař servíruje pokrm">
+            </div>
+            <div class="about-text scroll-reveal">
+                <h2>Umění prezentace</h2>
+                <p>Restaurace Lumina, založená v roce 2024, se zrodila z vášně pro redefinici zážitkové gastronomie. Naše suroviny odebíráme lokálně z udržitelných farem, abychom zajistili, že každé sousto bude stejně čerstvé jako chutné.</p>
+                <p>Naši oceňovaní šéfkuchaři kombinují klasické techniky s avantgardní prezentací a vytvářejí pokrmy, které jsou pastvou pro oči i chuťové buňky.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title scroll-reveal">Náš Kulinářský Svět</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Steak s bylinkovým máslem">
+            </div>
+            <div class="gallery-item scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Čerstvé ústřice na ledu">
+            </div>
+            <div class="gallery-item scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gurmánský hovězí burger">
+            </div>
+            <div class="gallery-item scroll-reveal">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tatarský biftek z lososa">
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Naše menu</h2>
+        
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">Vše</button>
+            <button class="filter-btn" data-filter="predkrmy">Předkrmy</button>
+            <button class="filter-btn" data-filter="hlavni">Hlavní chody</button>
+            <button class="filter-btn" data-filter="dezerty">Dezerty</button>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item scroll-reveal" data-category="predkrmy">
+                <div class="menu-header">
+                    <h3>Lanýžové mušle</h3>
+                    <span class="price">280 Kč</span>
+                </div>
+                <p>Zprudka opečené mořské hřebenatky, omáčka beurre blanc s černým lanýžem, křupavý pórek.</p>
+            </div>
+            
+            <div class="menu-item scroll-reveal" data-category="predkrmy">
+                <div class="menu-header">
+                    <h3>Tatarský biftek Wagyu</h3>
+                    <span class="price">250 Kč</span>
+                </div>
+                <p>Ručně krájené hovězí Wagyu A5, křepelčí vejce, kapary, crostini s uzeným česnekem.</p>
+            </div>
+
+            <div class="menu-item scroll-reveal" data-category="hlavni">
+                <div class="menu-header">
+                    <h3>Kachní confit</h3>
+                    <span class="price">320 Kč</span>
+                </div>
+                <p>Pomalu pečené kachní stehno, pastinákové pyré, višňové gastrique, microgreens.</p>
+            </div>
+            
+            <div class="menu-item scroll-reveal" data-category="hlavni">
+                <div class="menu-header">
+                    <h3>Šafránové rizoto</h3>
+                    <span class="price">190 Kč</span>
+                </div>
+                <p>Rýže Arborio, španělský šafrán, lesní houby, vyzrálé Parmigiano-Reggiano.</p>
+            </div>
+            
+            <div class="menu-item scroll-reveal" data-category="hlavni">
+                <div class="menu-header">
+                    <h3>Mořský vlk na bylinkách</h3>
+                    <span class="price">220 Kč</span>
+                </div>
+                <p>Filet z divokého mořského vlka, pyré z pečeného celeru, blanšírovaný chřest, omáčka ze šampaňského a kaviár.</p>
+            </div>
+
+            <div class="menu-item scroll-reveal" data-category="dezerty">
+                <div class="menu-header">
+                    <h3>Čokoládový fondán</h3>
+                    <span class="price">110 Kč</span>
+                </div>
+                <p>Valrhona hořká čokoláda s tekutým středem, malinové coulis, domácí zmrzlina z madagaskarské vanilky.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservation" class="reservation">
+        <h2 class="section-title">Rezervujte si stůl</h2>
+        <p style="color: var(--text-muted);">Připojte se k nám na nezapomenutelný večer. Doporučujeme rezervaci alespoň dva týdny předem.</p>
+        
+        <form class="res-form" id="resForm">
+            <input type="text" placeholder="Celé jméno" required>
+            <input type="email" placeholder="E-mailová adresa" required>
+            <input type="date" required>
+            <select required>
+                <option value="" disabled selected>Počet hostů</option>
+                <option value="1">1 osoba</option>
+                <option value="2">2 osoby</option>
+                <option value="3">3 osoby</option>
+                <option value="4">4 a více osob</option>
+            </select>
+            <button type="submit" class="btn">Potvrdit rezervaci</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col scroll-reveal">
+                <h4>Lumina.</h4>
+                <p>Kulinářská 123</p>
+                <p>415 01 Teplice, Česko</p>
+                <p>+420 123 456 789</p>
+            </div>
+            <div class="footer-col scroll-reveal">
+                <h4>Otevírací doba</h4>
+                <p>Po-Čt: 17:00 - 22:00</p>
+                <p>Pá-So: 17:00 - 23:00</p>
+                <p>Neděle: Zavřeno</p>
+            </div>
+            <div class="footer-col scroll-reveal">
+                <h4>Sledujte nás</h4>
+                <p><a href="https://www.instagram.com/ulicnypetr.cz" target="_blank">Instagram</a></p>
+                <p><a href="https://www.facebook.com/ulicnypetr.cz" target="_blank">Facebook</a></p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Restaurace Lumina. Web made by <a href="https://ulicnypetr.cz/" target="_blank">Petr&nbsp;Uličný - ulicnypetr.cz</a></p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast">
+        <span class="toast-icon">✓</span>
+        <p>Děkujeme za vaši rezervaci! Toto je pouze pro ukázku</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

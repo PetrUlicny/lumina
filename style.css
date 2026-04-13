@@ -1,6 +1,6 @@
-/* ================= UI/UX VARIABLES ================= */
+/* ================= VARIABLES ================= */
 :root {
-    --primary-color: #D4AF37; /* Gold */
+    --primary-color: #D4AF37;
     --primary-hover: #b5952f;
     --bg-color: #0f1014;
     --surface-color: #1a1c23;
@@ -28,7 +28,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Sjednocení písma pro formuláře a tlačítka */
 button, input, select, textarea {
     font-family: inherit;
     color: inherit;

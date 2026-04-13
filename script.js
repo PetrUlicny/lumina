@@ -3,19 +3,15 @@ const header = document.getElementById('header');
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 
-// Přidání pozadí hlavičce při scrollování (zkráceno pomocí toggle podmínky)
 window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Otevření / zavření mobilního menu
 menuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    // Ternární operátor pro rychlou změnu textu tlačítka
     menuBtn.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
 });
 
-// Skrytí menu po kliknutí na jakýkoliv odkaz
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -29,32 +25,43 @@ const menuItems = document.querySelectorAll('.menu-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Přepnutí aktivního zlatého rámečku
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const filterValue = btn.dataset.filter; // Moderní přístup k data-* atributům
+        const filterValue = btn.dataset.filter;
 
-        // Zobrazení nebo skrytí položek (využití toggle s podmínkou)
         menuItems.forEach(item => {
-            const isHidden = filterValue !== 'all' && item.dataset.category !== filterValue;
-            item.classList.toggle('hide', isHidden);
+            item.classList.remove('visible');
         });
+
+        setTimeout(() => {
+            menuItems.forEach(item => {
+                const isHidden = filterValue !== 'all' && item.dataset.category !== filterValue;
+                
+                item.classList.toggle('hide', isHidden);
+
+                if (!isHidden) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 50);
+                }
+            });
+        }, 100); // rychlost transition
     });
 });
 
 // ================= 3. ANIMACE PŘI SCROLLOVÁNÍ =================
-// Založení hlídače (Observer) s přímým vložením konfigurace pro čistší kód
+
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            obs.unobserve(entry.target); // Zastaví sledování po zobrazení
+            obs.unobserve(entry.target);
         }
     });
 }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
 
-// Spuštění sledování na všech elementech s třídou .scroll-reveal
+
 document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
 // ================= 4. REZERVACE A NOTIFIKACE =================
@@ -66,7 +73,7 @@ if (resForm) {
         e.preventDefault(); 
         
         toast.classList.add('show');
-        resForm.reset(); // Vyčistí formulář
+        resForm.reset(); 
 
         // Automatické skrytí po 3.5 vteřinách (zkrácen zápis funkce)
         setTimeout(() => toast.classList.remove('show'), 3500);
